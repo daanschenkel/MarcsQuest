@@ -3,8 +3,13 @@ const express = require('express');
 var fp = require("find-free-port")
 const open = require('open');
 const fs = require("fs");
-const { app, BrowserWindow } = require('electron')
-    // create express expressapplication
+const { app, BrowserWindow } = require('electron');
+const { json } = require('express');
+
+const { Database } = require('secure-db');
+const db = new Database('marcsquest-data', true);
+db.set('init', "true");
+// create express expressapplication
 const expressapp = express();
 
 
@@ -31,13 +36,31 @@ fp(3000).then(([freep]) => {
                 resizable: false,
 
             })
+            var splash = new BrowserWindow({
+                width: 1000,
+                height: 300,
+                transparent: true,
+                frame: false,
+                alwaysOnTop: true,
+                resizable: false,
+                movable: false
+
+            });
+            splash.loadFile('./loading.html');
+            splash.center();
+            win.hide();
+            setTimeout(function() {
+                splash.hide();
+                win.show();
+            }, 3000);
             win.setMenuBarVisibility(false)
             win.loadURL(host)
         }
         app.whenReady().then(() => {
-                createWindow()
-            })
-            //open(`${ host }/`); // opens `web/index.html` page
+            createWindow()
+        })
+
+        //open(`${ host }/`); // opens `web/index.html` page
     });
 
 }).catch((err) => {
