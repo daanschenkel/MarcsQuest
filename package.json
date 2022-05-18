@@ -1,25 +1,33 @@
 {
-  "name": "marcdekrossereloadedreloaded",
-  "version": "1.0.0",
-  "description": "Klik op start",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/daanschenkel/MarcDeKrosseReloadedReloaded.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/daanschenkel/MarcDeKrosseReloadedReloaded/issues"
-  },
-  "homepage": "https://github.com/daanschenkel/MarcDeKrosseReloadedReloaded#readme",
-  "dependencies": {
-    "express": "^4.18.1",
-    "get-port": "^6.1.2",
-    "open": "^8.4.0"
-  }
+    "name": "MarcsQuest",
+    "version": "1.0.0",
+    "description": "Klik op start",
+    "main": "app.js",
+    "scripts": {
+        "build": "electron-builder",
+        "start": "electron ."
+    },
+    "build": {
+        "appId": "marcsquest",
+        "files": [
+            "**/*",
+            "package.json"
+        ],
+        "directories": {
+            "buildResources": "build"
+        }
+    },
+
+
+
+
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.1",
+        "find-free-port": "^2.0.0",
+        "open": "^8.4.0"
+    }
+
 }
