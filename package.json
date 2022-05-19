@@ -1,7 +1,7 @@
 {
     "name": "MarcsQuest",
     "version": "1.0.1",
-    "description": "Klik op start",
+    "description": "Overleef een dag als Marc de Krosse.",
     "main": "app.js",
     "scripts": {
         "build": "electron-builder",
