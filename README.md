@@ -6,7 +6,7 @@
 Speler klikt op start, introvideo begint.
 
 - Voorstel
-Camera gaat naar paarse balie, daar komt info over het spel en hoe het werkt.
+Camera gaat naar ?, daar komt info over het spel en hoe het werkt.
 
 - Quest 1 | Haal een kopje koffie bij de docentenkamer.
 
