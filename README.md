@@ -2,10 +2,10 @@
 
 ## Storyline
 
-- Intro
+### Intro
 Speler klikt op start, introvideo begint.
 
-- Voorstel
+### Voorstel
 Camera gaat naar ?, daar komt info over het spel en hoe het werkt.
 
 ### Quest 1 | Haal een kopje koffie bij de docentenkamer.
