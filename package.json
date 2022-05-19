@@ -5,7 +5,7 @@
     "main": "app.js",
     "scripts": {
         "build": "electron-builder",
-        "start": "electron ."
+        "start": "nodemon --watch . --exec electron ."
     },
     "build": {
         "appId": "marcsquest",
@@ -23,6 +23,7 @@
     "dependencies": {
         "express": "^4.18.1",
         "find-free-port": "^2.0.0",
+        "nodemon": "^2.0.16",
         "open": "^8.4.0",
         "secure-db": "^1.5.1"
     },

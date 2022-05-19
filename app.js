@@ -22,9 +22,13 @@ const expressapp = express();
 expressapp.use('/assets', express.static(path.join(__dirname, './assets')));
 
 expressapp.get('/', (req, res) => {
+    // if (db.get("passedIntro") === "true") {
+    //return res.redirect("tutorial")
+    // }
     res.sendFile(__dirname + '/index.html')
 })
 expressapp.get('/tutorial', (req, res) => {
+    //db.set('passedIntro', "true");
     res.sendFile(__dirname + '/tutorial.html')
 })
 
@@ -46,7 +50,7 @@ fp(3000).then(([freep]) => {
             var splash = new BrowserWindow({
                 width: 1000,
                 height: 300,
-                transparent: true,
+                transparent: false,
                 frame: false,
                 alwaysOnTop: true,
                 resizable: false,
@@ -61,9 +65,13 @@ fp(3000).then(([freep]) => {
                 splash.close();
 
                 win.show();
+                win.setAlwaysOnTop(true);
+                win.setMenuBarVisibility(false)
+                win.loadURL(host)
+
+                win.setAlwaysOnTop(false);
             }, 22000);
-            win.setMenuBarVisibility(false)
-            win.loadURL(host)
+
         }
         app.whenReady().then(() => {
             createWindow()
