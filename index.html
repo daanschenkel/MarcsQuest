@@ -75,3 +75,10 @@
     <video playsinline id="introvideo" src="assets/mainmenu/video.mp4"></video>
 
 </center>
+<script type='text/javascript'>
+    document.getElementById('introvideo').addEventListener('ended', myHandler, false);
+
+    function myHandler(e) {
+        document.location.href = 'tutorial'
+    }
+</script>

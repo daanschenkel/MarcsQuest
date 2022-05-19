@@ -7,9 +7,13 @@ const { app, BrowserWindow } = require('electron');
 const { json } = require('express');
 
 const { Database } = require('secure-db');
+
 const db = new Database('marcsquest-data', true);
+//stop the stupid default database
+fs.rmSync(__dirname + "/database/your-database", { recursive: true, force: true });
+
 db.set('init', "true");
-// create express expressapplication
+// create express app
 const expressapp = express();
 
 
@@ -19,6 +23,9 @@ expressapp.use('/assets', express.static(path.join(__dirname, './assets')));
 
 expressapp.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
+})
+expressapp.get('/tutorial', (req, res) => {
+    res.sendFile(__dirname + '/tutorial.html')
 })
 
 
