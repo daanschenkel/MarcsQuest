@@ -51,8 +51,10 @@ fp(3000).then(([freep]) => {
             win.hide();
             setTimeout(function() {
                 splash.hide();
+                splash.close();
+
                 win.show();
-            }, 3000);
+            }, 22000);
             win.setMenuBarVisibility(false)
             win.loadURL(host)
         }
