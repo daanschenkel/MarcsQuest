@@ -4,7 +4,7 @@
     "description": "Klik op start",
     "main": "app.js",
     "scripts": {
-        "build": "electron-builder -wl",
+        "build": "electron-builder",
         "start": "electron ."
     },
     "build": {
