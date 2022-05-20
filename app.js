@@ -32,6 +32,17 @@ expressapp.get('/tutorial', (req, res) => {
     res.sendFile(__dirname + '/tutorial.html')
 })
 
+expressapp.get('/quest1/', (req, res) => {
+    //db.set('passedIntro', "true");
+    res.sendFile(__dirname + '/quests/1/naarDeur.html')
+})
+expressapp.get('/quest1/hal', (req, res) => {
+    //db.set('passedIntro', "true");
+    res.sendFile(__dirname + '/quests/1/hal.html')
+})
+
+
+
 
 /*-------------------*/
 // find available port (if not 3000)

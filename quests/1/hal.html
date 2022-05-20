@@ -61,13 +61,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <center>
-    <video playsinline autoplay id="tutorialvid" src="assets/tutorial/welkom.mp4"></video>
+    <video playsinline autoplay id="vid" src="/assets/quests/1/video2.mp4"></video>
 
 </center>
 <script type='text/javascript'>
-    document.getElementById('tutorialvid').addEventListener('ended', myHandler, false);
+    document.getElementById('vid').addEventListener('ended', myHandler, false);
 
     function myHandler(e) {
-       document.location.href = "quest1"
+        document.addEventListener('click', function(event) {
+
+        });
+
     }
 </script>
