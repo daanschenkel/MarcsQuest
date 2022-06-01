@@ -50,6 +50,10 @@ expressapp.get('/quest1/rechterding/renweg', (req, res) => {
     //db.set('passedIntro', "true");
     res.sendFile(__dirname + '/quests/1/renweg.html')
 })
+expressapp.get('/quest1/rechterding/nodig', (req, res) => {
+    //db.set('passedIntro', "true");
+    res.sendFile(__dirname + '/quests/1/rechterding_nodig.html')
+})
 
 
 
