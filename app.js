@@ -41,6 +41,20 @@ expressapp.get('/quest1/hal', (req, res) => {
     res.sendFile(__dirname + '/quests/1/hal.html')
 })
 
+expressapp.get('/quest1/rechterding', (req, res) => {
+    //db.set('passedIntro', "true");
+    res.sendFile(__dirname + '/quests/1/rechterding.html')
+})
+expressapp.get('/quest1/loopnaardeur', (req, res) => {
+    //db.set('passedIntro', "true");
+    res.sendFile(__dirname + '/quests/1/vanRechterNaarDocenten.html')
+})
+
+expressapp.get('/quest1/koffiehalen', (req, res) => {
+    //db.set('passedIntro', "true");
+    res.sendFile(__dirname + '/quests/1/koffieHalen.html')
+})
+
 
 
 

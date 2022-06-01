@@ -55,14 +55,28 @@
         width: 50%;
         height: 50%;
     }
-    .docentenkamer{
-        margin-top: 0.1%;
-        margin-left: -75%;
-        color: white;
-        background-color: white;
-        width: 400px;
+    
+    .docentenkamer {
+        position: absolute;
+        width: 300px;
         height: 300px;
-        opacity: 30%;
+        top: 0%;
+        left: 0%;
+    }
+    
+    .naarrechts {
+        width: 300px;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    
+    #waarwiljeheen {
+        position: absolute;
+        color: black;
+        top: 30%;
+        left: 30%;
     }
 </style>
 
@@ -75,14 +89,37 @@
     <h1></h1>
 </div>
 </center>
+<div style="display:none;" id="waarwiljeheen">
+    <h1 id="waargajeheen">Je wilt een kopje koffie halen, waar ga je heen?</h1>
+    <h1 id="sleutelnodig" style="display: none;">Hmm, voor die deur heb ik een sleutel nodig...</h1>
+</div>
+<div style="display:none;" id="naarrechts" class="naarrechts"></div>
+
+<div style="display:none;" id="docentenkamer" class="docentenkamer"></div>
 <script type='text/javascript'>
     document.getElementById('vid').addEventListener('ended', myHandler, false);
 
     function myHandler(e) {
-        document.getElementById("docentenkamer").style.display = "block"
-        document.addEventListener('click', function(event) {
+        document.getElementById('waarwiljeheen').style.display = "block"
+        document.getElementById('naarrechts').style.display = "block"
+        document.getElementById('docentenkamer').style.display = "block"
 
+        document.getElementById("docentenkamer").addEventListener('click', function(event) {
+
+            document.getElementById('waargajeheen').style.display = "none"
+
+            document.getElementById('sleutelnodig').style.display = "block"
+            setTimeout(() => {
+
+                document.getElementById('waargajeheen').style.display = "block"
+
+                document.getElementById('sleutelnodig').style.display = "none"
+            }, 5000)
         });
+        document.getElementById("naarrechts").addEventListener('click', function(event) {
+            document.location.href = "/quest1/rechterding"
+        });
+
 
     }
 </script>

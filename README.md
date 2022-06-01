@@ -24,3 +24,6 @@ De speler moet de sleutel hebben om de deur te openen, dan loopt de speler naar 
 
 Quest 1 voltooid!
 
+### Quest 2 | Vind het goede lokaal
+
+We beginnen bij de deur van de docentenkamer en lopen naar buiten. Dan kan je naar boven of beneden blijven en komt er in beeld in welk lokaal je moet zijn. Je kan dan de weg vinden

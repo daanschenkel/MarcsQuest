@@ -1,6 +1,6 @@
 {
     "name": "MarcsQuest",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Overleef een dag als Marc de Krosse.",
     "main": "app.js",
     "scripts": {
