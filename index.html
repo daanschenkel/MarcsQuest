@@ -61,6 +61,10 @@
         document.getElementById("introvideo").play();
         document.getElementById("menu").style.display = "none";
     }
+    function skipIntro() {
+       location = "/tutorial";
+    }
+    
 </script>
 
 <head>
@@ -71,6 +75,8 @@
         <img src="assets/logo.png" class="title logo center">
         <br>
         <button class="button center" onclick="startIntro()"><img src="assets/mainmenu/start.png"></button>
+        <button class="button center" onclick="skipIntro()"><img width="225" src="assets/mainmenu/skipintro.png"></button>
+        
     </div>
     <video playsinline id="introvideo" src="assets/mainmenu/video.mp4"></video>
 
@@ -81,4 +87,5 @@
     function myHandler(e) {
         document.location.href = 'tutorial'
     }
+    
 </script>
