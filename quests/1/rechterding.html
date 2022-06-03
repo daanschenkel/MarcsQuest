@@ -55,22 +55,23 @@
         width: 50%;
         height: 50%;
     }
-    #whattoask{
+    
+    #whattoask {
         text-align: center;
-        width:100%;
+        width: 100%;
         margin-top: 15%;
         margin-left: -25%;
     }
-    h1{
+    
+    h1 {
         font-size: 50px;
         color: rgb(238, 225, 225);
-
     }
-    a{
+    
+    a {
         font-size: 20px;
         color: white;
     }
-    
 </style>
 
 <head>
@@ -82,7 +83,7 @@
 </center>
 <div id="whattoask" style="display: none;">
     <h1>Wat doe je?</h1>
-    <a href="rechterding/renweg">Ren weg</a>
+    <a href="/quest1/rechterding/renweg">Ren weg</a>
     <br>
     <a href="#" onclick="mag()">Vraag: Mag ik de sleutel van die deur daar?</a>
     <br>
@@ -92,31 +93,34 @@
 </div>
 <script type='text/javascript'>
     document.getElementById('vid').addEventListener('ended', myHandler, false);
-    document.getElementById('vid').addEventListener("timeupdate", checktime,false);
-    function checktime(){
-        console.log(this.currentTime);
-        if(this.currentTime > 7.1){
-        console.log("time for event1")
-         if(this.currentTime < 7.5){
-             if(event1triggered) return;
-             console.log("event1 confirmed");
-             var event1triggered = true;
-            document.getElementById('vid').pause();
-            console.log("pause");
-            document.getElementById("whattoask").style.display = "block"; 
+    document.getElementById('vid').addEventListener("timeupdate", checktime, false);
 
-        }}
+    function checktime() {
+        console.log(this.currentTime);
+        if (this.currentTime > 7.1) {
+            console.log("time for event1")
+            if (this.currentTime < 7.5) {
+                if (event1triggered) return;
+                console.log("event1 confirmed");
+                var event1triggered = true;
+                document.getElementById('vid').pause();
+                console.log("pause");
+                document.getElementById("whattoask").style.display = "block";
+
+            }
+        }
     }
+
     function myHandler(e) {
         window.location.href = "/quest1/loopnaardeur";
 
     }
-    function mag(){
-        document.getElementById('vid').currentTime = 11;
-        
-        document.getElementById('vid').play();
-            console.log("resume");
-            document.getElementById("whattoask").style.display = "none"; 
-        }
 
+    function mag() {
+        document.getElementById('vid').currentTime = 11;
+
+        document.getElementById('vid').play();
+        console.log("resume");
+        document.getElementById("whattoask").style.display = "none";
+    }
 </script>
