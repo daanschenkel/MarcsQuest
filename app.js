@@ -76,6 +76,14 @@ expressapp.get('/quest1/koffiehalen', (req, res) => {
     //db.set('passedIntro', "true");
     res.sendFile(__dirname + '/quests/1/koffieHalen.html')
 })
+expressapp.get('/quest1/koffieapparaat', (req, res) => {
+    //db.set('passedIntro', "true");
+    res.sendFile(__dirname + '/quests/1/koffieapparaat.html')
+})
+expressapp.get('/quest1/koffie2', (req, res) => {
+    //db.set('passedIntro', "true");
+    res.sendFile(__dirname + '/quests/1/koffiewordtgezet.html')
+})
 
 
 
