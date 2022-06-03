@@ -55,29 +55,30 @@
         width: 50%;
         height: 50%;
     }
-    #whattoask{
+    
+    #whattoask {
         text-align: center;
-        width:100%;
+        width: 100%;
         margin-top: 15%;
         margin-left: 5%;
     }
-    h1{
+    
+    h1 {
         font-size: 30px;
         color: rgb(238, 225, 225);
-
     }
-    a{
+    
+    a {
         font-size: 20px;
         color: white;
     }
-    
 </style>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <center>
-    <video playsinline autoplay id="vid" src="/assets/quests/1/rechterding/video1.mp4"></video>
+    <video playsinline id="vid" src="/assets/quests/1/rechterding/video1.mp4"></video>
 
 </center>
 <div id="whattoask">
@@ -90,45 +91,63 @@
 </div>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type='text/javascript'>
-document.getElementById('numberform').addEventListener("submit", raadnummer,false);
+    document.getElementById('numberform').addEventListener("submit", raadnummer, false);
 
-var nummer = Math.floor(Math.random() * 10) + 1;
-var pogingen = 3;
+    var nummer = Math.floor(Math.random() * 10) - 1;
+    var pogingen = 3;
+    if (nummer === 0) nummer = 1;
+    if (nummer === -1) nummer = 1;
 
-document.getElementById('number').addEventListener("click", focus,false);
 
-function focus(){
-    document.getElementById('number').focus();
-}
+    document.getElementById('number').addEventListener("click", focus, false);
 
-console.log(nummer);
-    function raadnummer(e){
+    function focus() {
+        document.getElementById('number').focus();
+    }
+
+    console.log(nummer);
+    var goedenummer = false;
+
+    function raadnummer(e) {
         e.preventDefault();
-        if(document.getElementById("number").value === "") return false;
+        if (document.getElementById("number").value === "") return false;
 
-        if(document.getElementById("number").value !== nummer.toString()){
+        if (document.getElementById("number").value !== nummer.toString()) {
             pogingen--;
-            if(pogingen === 0){
-                swal("IK WEET HET NIET, WEGWEZEN HIER!").then((value) => {
-                    location = "/quest1/rechterding/renweg"
-});
+            if (pogingen < 1) {
+                return swal("IK WEET HET NIET, WEGWEZEN HIER!").then((value) => {
+                    location = "/quest1/rechterding/renweg/nummerfout"
+                });
             }
-            setTimeout(function () {
+            setTimeout(function() {
                 swal("Helaas", "dat is niet goed. Je hebt nog " + pogingen + " pogingen over.", "error");
 
             }, 100);
-            
-        }else{
-            swal("Goed gedaan!", "Dat was het goede nummer!", "success");
-                }
+
+        } else {
+
+            return swal("Goed gedaan!", "Dat was het goede nummer!", "success").then((value) => {
+                document.getElementById('vid').play();
+                document.getElementById("whattoask").style.display = "none";
+            });
+        }
     }
-    document.getElementById('vid').addEventListener("timeupdate", checktime,false);
-    function checktime(){
+    var goedenummer = false;
+
+    if (goedenummer !== true) {
+        console.log('pause')
         document.getElementById('vid').currentTime = 11;
         document.getElementById('vid').pause();
+        var goedenummer = true;
 
-
-    
     }
 
+
+
+    document.getElementById('vid').addEventListener('ended', myHandler, false);
+
+    function myHandler(e) {
+        window.location.href = "/quest1/loopnaardeur";
+
+    }
 </script>
