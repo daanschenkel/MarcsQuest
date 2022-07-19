@@ -25,7 +25,7 @@
         "find-free-port": "^2.0.0",
         "nodemon": "^2.0.16",
         "open": "^8.4.0",
-        "secure-db": "^3.0.0"
+        "secure-db": "^3.0.3"
     },
     "devDependencies": {
         "electron": "latest",
